@@ -6,32 +6,10 @@ def makelist(input):
         list = list + item
     return str(list)
 
-print(makelist(read))
+s = makelist(read)
 
-##def freq(list):
+def freq(list, start):
 ##    start = 0
-##    split = list.split()
-##    for item in split:
-##        if "-" in item:
-####            print(item)
-##            strip = item.strip("-,")
-####            print(strip)
-####            print(type(strip))
-##            num = int(strip)
-##            start = start - num
-##        else:
-####            print(item)
-##            strip = item.strip("+,")
-####            print(strip)
-####            print(type(strip))
-##            num = int(strip)
-##            start = start + num
-##    return start
-##print(freq(makelist(read)))
-
-def freq(list):
-    start = 0
-    results = {}
     split = list.split()
     for item in split:
         if "-" in item:
@@ -41,8 +19,6 @@ def freq(list):
 ##            print(type(strip))
             num = int(strip)
             start = start - num
-            results.setdefault(start,0)
-            results[start] += 1
         else:
 ##            print(item)
             strip = item.strip("+,")
@@ -50,15 +26,42 @@ def freq(list):
 ##            print(type(strip))
             num = int(strip)
             start = start + num
+    return start
+
+f = freq(s,0)
+print(f)
+
+def freqdict(list,start):
+    results = {}
+    split = list.split()
+    for item in split:
+        if "-" in item:
+##            print(item)
+            strip = item.strip("-,")
+##            print(strip)
+            num = int(strip)
+            start = start - num
+            results.setdefault(start,0)
+            results[start] += 1
+        else:
+##            print(item)
+            strip = item.strip("+,")
+##            print(strip)
+            num = int(strip)
+            start = start + num
             results.setdefault(start,0)
             results[start] += 1
     return results
 
-def twice(dict):
-    for item in dict:
-        if dict[item] == 2:
+def twice(results, start):
+    for item in results:
+        twice = 0
+        if results[item] == 2:
             twice = item
-            return twice
-print(freq(makelist(read)))
-print(twice(freq(makelist(read))))
+        else:
+            twice(freqdict(s,freq(s,start)), start)
+    return twice
+
+print(freqdict(s, f))
+print(twice(freqdict(s, f),f))
 
