@@ -22,6 +22,15 @@ def freq(list,start):
             start = start + int(strip)
             results.setdefault(start,0)
             results[start] += 1
-    return results, start
+    return results
 
-print(freq(s, 0))
+def rec(results, start):
+    count = 0
+    again = rec(freq(s,start), start)
+    if item in results == 2:
+        return item
+    else:
+        count += 1
+    return again
+f = freq(s, 0)
+print(rec(f,574))
