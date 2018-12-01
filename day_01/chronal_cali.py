@@ -21,19 +21,19 @@ Starting with a frequency of zero, what is the resulting frequency after all of 
     split = list.split()
     for item in split:
         if "-" in item:
-            print(item)
-            strip = item.strip("-")
-            print(strip)
-            print(type(strip))
-##            num = int(strip)
-##            start = start - num
+##            print(item)
+            strip = item.strip("-,")
+##            print(strip)
+##            print(type(strip))
+            num = int(strip)
+            start = start - num
         else:
-            print(item)
-            strip = item.strip("+")
-            print(strip)
-            print(type(strip))
-##            num = int(strip)
-##            start = start + num
+##            print(item)
+            strip = item.strip("+,")
+##            print(strip)
+##            print(type(strip))
+            num = int(strip)
+            start = start + num
     return start
 ##    return split
 
