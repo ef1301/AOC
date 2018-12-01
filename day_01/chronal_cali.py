@@ -24,15 +24,17 @@ Starting with a frequency of zero, what is the resulting frequency after all of 
             print(item)
             strip = item.strip("-")
             print(strip)
+            print(type(strip))
 ##            num = int(strip)
 ##            start = start - num
         else:
             print(item)
             strip = item.strip("+")
             print(strip)
+            print(type(strip))
 ##            num = int(strip)
 ##            start = start + num
-        
+    return start
 ##    return split
 
 print(freq("+1, -2, +3, +1"))
