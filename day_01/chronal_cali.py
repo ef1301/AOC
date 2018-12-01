@@ -13,21 +13,15 @@ def freq(list,start):
     split = list.split()
     for item in split:
         if "-" in item:
-##            print(item)
-            strip = item.strip("-,")
-##            print(strip)
-            num = int(strip)
-            start = start - num
+            strip = item.strip("-")
+            start = start - int(strip)
             results.setdefault(start,0)
             results[start] += 1
         else:
-##            print(item)
-            strip = item.strip("+,")
-##            print(strip)
-            num = int(strip)
-            start = start + num
+            strip = item.strip("+")
+            start = start + int(strip)
             results.setdefault(start,0)
             results[start] += 1
-    return results
+    return results, start
 
 print(freq(s, 0))
