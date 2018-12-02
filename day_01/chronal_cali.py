@@ -26,7 +26,7 @@
 ##                freq(dict)
 
 
-f = open("input.txt")
+f = open("/home/fang/Downloads/input.txt")
 split = f.read().split()
 
 def freq():

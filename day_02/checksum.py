@@ -16,62 +16,45 @@ def double():
             if item.count(letter) == 2:
                 double.append(item)
                 break
-##                break
-##            elif item.count(letter) == 3:
-##                triple.append(item)
             else:
                 continue
     return double
 
-##print(double())        
-double = double()
-##print(double)
-
 ###triples
 def triple():
-    record = []
+    triple = []
     for item in split:
         for letter in item:
             note = []
             if item.count(letter) == 3:
-                record.append(item)
+                triple.append(item)
                 break
             else:
                 continue
-    return record
+    return triple
 
-##print(triple())
-triple = triple()
-##print(triple)
+double = count(double())
+triple = count(triple())
+print(triple*double)
 
-###checksum
-def checksum(double, triple):
-    return count(double())*count(triple())
-
-round2 = double + triple
-
-##def check():
-##    for i in list:
-##        
-
-def common(boxes):
-    ref = []
-    item = 1
-    while item < len(boxes):
-        first = boxes[item-1]
-        print(first)
-        next = boxes[item]
-        list = []
-        item += 1
-        for i in range(0,26):
-##            print(list)
-            if first[i] == next[i]:
-##                print(first[i])
-##                print(next[i])
-                list.append(first[i])
-            else:
-                continue
-                
-    return list
-##    print(highest)
-print(common(round2))
+##def common(boxes):
+##    ref = []
+##    item = 1
+##    while item < len(boxes):
+##        first = boxes[item-1]
+##        print(first)
+##        next = boxes[item]
+##        list = []
+##        item += 1
+##        for i in range(0,26):
+####            print(list)
+##            if first[i] == next[i]:
+####                print(first[i])
+####                print(next[i])
+##                list.append(first[i])
+##            else:
+##                continue
+##                
+##    return list
+####    print(highest)
+####print(common(round2))
