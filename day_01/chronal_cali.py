@@ -24,13 +24,13 @@ def freq(list,start):
             results[start] += 1
     return results
 
-def rec(results, start):
-    count = 0
-    again = rec(freq(s,start), start)
-    if item in results == 2:
-        return item
-    else:
-        count += 1
-    return again
+
+def check(results):
+    for item in results:
+        if results[item] == 2:
+            return True
+        else:
+            return "sad"
+    
 f = freq(s, 0)
-print(rec(f,574))
+print(check(f))
