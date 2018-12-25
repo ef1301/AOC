@@ -1,60 +1,41 @@
-def count(record):
-    count = 0
-    for string in record:
-##        print(string)
-        count += 1
-    return count
 file = open("input.txt").read()
 split = file.split()
 
-#doubles
 def double():
-    double = []
-##    triple = []
+    count = 0
     for item in split:
         for letter in item:
             if item.count(letter) == 2:
-                double.append(item)
+                count += 1
                 break
             else:
                 continue
-    return double
+    return count
 
-###triples
 def triple():
-    triple = []
+    count = 0
     for item in split:
         for letter in item:
-            note = []
             if item.count(letter) == 3:
-                triple.append(item)
+                count += 1
                 break
             else:
                 continue
-    return triple
+    return count
 
-double = count(double())
-triple = count(triple())
-print(triple*double)
+print(triple()*double())
 
-##def common(boxes):
-##    ref = []
-##    item = 1
-##    while item < len(boxes):
-##        first = boxes[item-1]
-##        print(first)
-##        next = boxes[item]
-##        list = []
-##        item += 1
-##        for i in range(0,26):
-####            print(list)
-##            if first[i] == next[i]:
-####                print(first[i])
-####                print(next[i])
-##                list.append(first[i])
-##            else:
-##                continue
-##                
-##    return list
-####    print(highest)
-####print(common(round2))
+def common():
+    for i in split:
+        for j in split:
+            diffs = []
+            diff = 0
+            for n in range(len(j)):
+                if i[n] != j[n]:
+                    diff += 1
+                    diffs.append(i[n])
+            if diff == 1:
+                print(diffs)
+                print(i)
+                print(j)
+print(common())
