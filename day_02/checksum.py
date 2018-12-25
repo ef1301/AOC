@@ -26,16 +26,16 @@ def triple():
 print(triple()*double())
 
 def common():
-    for i in split:
-        for j in split:
+    for item in split:
+        for i in split:
             diffs = []
             diff = 0
-            for n in range(len(j)):
-                if i[n] != j[n]:
+            for n in range(len(i)):
+                if item[n] != i[n]:
                     diff += 1
-                    diffs.append(i[n])
+                    diffs.append(item[n])
             if diff == 1:
                 print(diffs)
+                print(item)
                 print(i)
-                print(j)
 print(common())
